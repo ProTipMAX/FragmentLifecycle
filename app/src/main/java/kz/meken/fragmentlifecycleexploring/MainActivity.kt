@@ -72,22 +72,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setInitialFragment() {
-        mActiveFragment = mFirstFragment
+        mActiveFragment = FirstFragment()
     }
 
     private fun initBottomNavigationViewListener() {
         bnv.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.activity_main_bnv_first -> {
-                    displayFragment(mFirstFragment, FirstFragment.TAG)
+                    displayFragment(mFirstFragment)
                     true
                 }
                 R.id.activity_main_bnv_second -> {
-                    displayFragment(mSecondFragment, SecondFragment.TAG)
+                    displayFragment(mSecondFragment)
                     true
                 }
                 R.id.activity_main_bnv_third -> {
-                    displayFragment(mThirdFragment, ThirdFragment.TAG)
+                    displayFragment(mThirdFragment)
                     true
                 }
                 else -> false
@@ -96,26 +96,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayFragment(
-        fragment: Fragment,
-        tag: String
+        fragment: Fragment
     ) {
         fragmentManager.beginTransaction()
             .replace(containerId, fragment)
             .commit()
 
-//        val foundFragment = fragmentManager.findFragmentByTag(tag)
-//
-//        if (foundFragment == null) {
-//            fragmentManager.beginTransaction()
-//                .hide(mActiveFragment)
-//                .add(containerId, fragment, tag)
-//                .commit()
-//        } else {
-//            fragmentManager.beginTransaction()
-//                .hide(mActiveFragment)
-//                .show(foundFragment)
-//                .commit()
-//        }
         mActiveFragment = fragment
     }
 }
