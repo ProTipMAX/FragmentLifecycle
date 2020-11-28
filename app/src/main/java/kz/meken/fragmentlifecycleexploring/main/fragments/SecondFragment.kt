@@ -1,4 +1,4 @@
-package kz.meken.fragmentlifecycleexploring.fragments
+package kz.meken.fragmentlifecycleexploring.main.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kz.meken.fragmentlifecycleexploring.R
 
-class FirstFragment: Fragment(R.layout.fragment_first) {
+class SecondFragment: Fragment(R.layout.fragment_second) {
 
     companion object {
-        val TAG = "FirstFragment"
+        val TAG = "SecondFragment"
     }
 
     override fun onAttach(context: Context) {

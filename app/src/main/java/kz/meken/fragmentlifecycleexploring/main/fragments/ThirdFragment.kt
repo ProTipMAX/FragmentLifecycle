@@ -1,4 +1,4 @@
-package kz.meken.fragmentlifecycleexploring.fragments
+package kz.meken.fragmentlifecycleexploring.main.fragments
 
 import android.content.Context
 import android.os.Bundle

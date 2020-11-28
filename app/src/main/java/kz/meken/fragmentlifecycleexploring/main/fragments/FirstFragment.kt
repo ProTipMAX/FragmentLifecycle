@@ -1,4 +1,4 @@
-package kz.meken.fragmentlifecycleexploring.fragments
+package kz.meken.fragmentlifecycleexploring.main.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kz.meken.fragmentlifecycleexploring.R
 
-class SecondFragment: Fragment(R.layout.fragment_second) {
+class FirstFragment: Fragment(R.layout.fragment_first) {
 
     companion object {
-        val TAG = "SecondFragment"
+        val TAG = "FirstFragment"
     }
 
     override fun onAttach(context: Context) {
@@ -42,6 +42,11 @@ class SecondFragment: Fragment(R.layout.fragment_second) {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Log.d(TAG, "onActivityCreated")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(TAG, "onSaveInstanceState")
     }
 
     override fun onStart() {
